@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ This is a simple console application that allows the user to enter a number and"""
 
 
