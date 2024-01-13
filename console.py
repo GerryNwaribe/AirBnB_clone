@@ -28,20 +28,20 @@ class HBNBCommand(cmd.Cmd):
     """Creates a new instance of a class based on the argument passed"""
     _x = arg.strip()
     _r = [x.strip() for x in _x]
-    if not arg:  # If the class name is missing
+    if not arg:
       print("** class name missing **")
     elif arg not in self.cls_name:
       print("** class doesn't exist **")
     else:
-      obj = models.base_model.BaseModel() # Creates a new instance of BaseModel
-      obj.save()  # saves it (to the JSON file) and prints the id
+      obj = models.base_model.BaseModel()
+      obj.save()
       print(obj.id)
 
   def do_show(self, arg):
     """Prints the string representation of an instance based on the class name and id"""
     _x = arg.split()
     _r = [x.strip() for x in _x]
-    if not _r:  # If the class name is missing
+    if not _r:
       print("** class name missing **")
     elif _r[0] not in self.cls_name:
       print("** class doesn't exist **")
@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
       obj.id = _r[1]
       obj.save()
       print(obj.__dict__)
-    
+
     if len(_r) < 1:
       print("** class name missing **")
     elif _r[0] not in self.cls_name:
@@ -87,13 +87,12 @@ class HBNBCommand(cmd.Cmd):
       if _r[0] not in self.cls_name:
         print("** class doesn't exist **")
         return
-    x = [str(obj) for obj in models.storage.all().values()]   # A list of strings
+    x = [str(obj) for obj in models.storage.all().values()]
     print(x)
 
   def do_update(self, arg):
     """Updates an instance based on the class name and id"""
-    # update <class name>   <id>                   <attribute name>   "<attribute value>"
-    # update BaseModel      49faff9a-910505c55907  first_name         "Betty"
+
     _x = arg.split()
     _r = [x.strip() for x in _x]
     _l = len(_r)
