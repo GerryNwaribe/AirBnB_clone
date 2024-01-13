@@ -1,36 +1,52 @@
-#!/usr/bin/python3
-"""Class"""
-
+#!/usr/bin/env python3
+""" File storage module. """
 
 import json
+from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage():
-    __file_path = "file.json"
-    __objects = {}
+  """ File storage class. """
+  __file_path = "file.json"
+  __objects = {}
 
-    def __init__(self):
-        pass
+  def __init__(self):
+    """ Initialize the file storage. """
+    pass
 
-    def all(self):
-        return self.__objects
+  def all(self):
+    """ Return the dictionary of objects. """
+    return self.__objects
+    return self.__objects
 
-    def new(self, obj):
-        _id = obj['id']
-        _cls = obj['__class__']
-        _cls_id = _cls + '.' + _id
-        self.__objects[_cls_id] = obj
+  def new(self, obj):
+    """ Add a new object to the dictionary. """
+    self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
-    def save(self):
-        """serializes dict to json"""
-        with open(self.__file_path, 'w') as f:
-            # f.write(json.dumps(self.__objects))
-            json.dump(self.__objects, f)
+  def save(self):
+    """ Save the dictionary to the file. """
+    _all_obj = self.__objects    # Holds all objects after reloading the file
+    x = {}    # Holds the objects to be saved
+    for o in _all_obj.keys():
+      x[o] = _all_obj[o].to_dict()
+    with open(self.__file_path,  "w") as f:
+      json.dump(x, f)
 
-    def reload(self):
-        """deserializes json to dict"""
-        with open(self.__file_path, 'r') as f:
-            try:
-                self.__objects = json.load(f)
-            except FileNotFoundError:
-                pass
+  def reload(self):
+    """ Reload the dictionary from the file. """
+    try:
+      with open(self.__file_path) as f:
+        _ob = json.load(f)
+        for o in _ob.values():
+          _cls = o.pop("__class__")    # del o["__class__"]
+          _r = eval(_cls)(**o)
+          self.new(_r)
+          """_cls = o.pop("__class__", None)
+          if _cls:
+              cls = getattr(FileStorage, _cls, None)
+              if cls:
+                  instance = cls(**o)
+                  self.new(instance)"""
+    except FileNotFoundError:
+      pass
