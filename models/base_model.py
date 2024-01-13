@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ This file contains the base model for the project. """
 
 
@@ -21,7 +21,7 @@ class BaseModel():
           if key == 'updated_at' or key == 'created_at':
             value = datetime.datetime.fromisoformat(value)
           if not key.startswith('__'):
-            setattr(self, key, value)  # OR self.__dict__[k] = v
+            setattr(self, key, value)
       else:
         models.storage.new(self)
   
@@ -41,3 +41,4 @@ class BaseModel():
     def __str__(self):
       """ String representation of the class. """
       return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+  
