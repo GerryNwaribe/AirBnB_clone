@@ -24,7 +24,7 @@ class BaseModel():
             for key, value in kwargs.items():
                 if key == 'updated_at' or key == 'created_at':
                     value = datetime.fromisoformat(value)
-                if key.startswith('__'):
+                if key != '__class__':
                     self.__dict__[key] = value  # Or setattr(self, key, value)
         else:
             storage.new(self)
@@ -46,4 +46,4 @@ class BaseModel():
 
     def __str__(self):
         """ String representation of the class. """
-        return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
