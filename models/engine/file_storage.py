@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ File storage module. """
 
 import json
@@ -13,7 +13,7 @@ class FileStorage():
 
     def __init__(self):
         """ Initialize the file storage. """
-    pass
+        pass
 
     def all(self):
         """ Return the dictionary of objects. """
@@ -39,13 +39,7 @@ class FileStorage():
                 _ob = json.load(f)
                 for o in _ob.values():
                     _cls = o.pop("__class__")
-                _r = eval(_cls)(**o)
-                self.new(_r)
-                """_cls = o.pop("__class__", None)
-                if _cls:
-                    cls = getattr(FileStorage, _cls, None)
-                    if cls:
-                        instance = cls(**o)
-                        self.new(instance)"""
-        except FileNotFoundError:
+                    _r = eval(_cls)(**o)
+                    self.new(_r)
+        except (FileNotFoundError, EOFError, json.JSONDecodeError):
             pass

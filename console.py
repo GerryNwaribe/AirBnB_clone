@@ -4,6 +4,13 @@
 
 import cmd
 import models.base_model
+from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -28,16 +35,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance of a class based on the argument passed"""
-        _x = arg.strip()
+        _x = arg.split()
         _r = [x.strip() for x in _x]
         if not arg:
             print("** class name missing **")
-        elif arg not in self.cls_name:
+        elif _r[0] not in self.cls_name:
             print("** class doesn't exist **")
         else:
-            obj = models.base_model.BaseModel()
-        obj.save()
-        print(obj.id)
+            print(eval(_r[0])().id)
+            storage.save()
 
     def do_show(self, arg):
         """Prints the string representation of an instance
@@ -55,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             obj = models.storage.all()[f"{_r[0]}.{_r[1]}"]
-        print(obj)
+            print(obj)
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id"""
@@ -71,17 +77,18 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             models.storage.all().pop(f"{_r[0]}.{_r[1]}")
-        models.storage.save()
+            models.storage.save()
 
     def do_all(self, arg):
         """Prints all string representation of all instances
-        based on the class name"""
+        based on the class name
+        """
         _x = arg.split()
         _r = [x.strip() for x in _x]
         if arg:
             if _r[0] not in self.cls_name:
                 print("** class doesn't exist **")
-            return
+                return
         x = [str(obj) for obj in models.storage.all().values()]
         print(x)
 
@@ -105,8 +112,8 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             obj = models.storage.all()[f"{_r[0]}.{_r[1]}"]
-        obj.__setattr__(_r[2], _r[3])
-        obj.save()
+            obj.__setattr__(_r[2], _r[3])
+            obj.save()
 
 
 if __name__ == '__main__':
