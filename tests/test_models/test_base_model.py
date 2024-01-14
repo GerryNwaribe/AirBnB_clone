@@ -14,7 +14,8 @@ class TestBaseModel(unittest.TestCase):
     """def test_pycodestyle(self):
         _s = pycodestyle.StyleGuide(quiet=True)
         _r = _s.check_files(['models/base_model.py'])
-        self.assertEqual(result.total_errors, 0, "Found code style errors (and warnings).")
+        self.assertEqual(result.total_errors, 0,
+        "Found code style errors (and warnings).")
 
     def test_doc(self):
         import models.base_model
@@ -70,4 +71,3 @@ class TestBaseModel(unittest.TestCase):
         gerry.save()
         new_time = gerry.updated_at
         self.assertNotEqual(old_time, new_time)
-
