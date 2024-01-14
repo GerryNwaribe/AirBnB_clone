@@ -25,7 +25,7 @@ class BaseModel():
                 if key == 'updated_at' or key == 'created_at':
                     value = datetime.fromisoformat(value)
                 if key.startswith('__'):
-                    setattr(self, key, value)  # OR self.__dict__[k] = v
+                    self.__dict__[key] = value  # Or setattr(self, key, value)
         else:
             storage.new(self)
 
