@@ -2,8 +2,7 @@
 """ File storage module. """
 
 import json
-from models.base_model import BaseModel
-from models.user import User
+import os
 
 
 class FileStorage():
@@ -34,6 +33,8 @@ class FileStorage():
 
     def reload(self):
         """ Reload the dictionary from the file. """
+        if not os.path.isfile(FileStorage.__file_path):
+            return
         try:
             with open(self.__file_path) as f:
                 _ob = json.load(f)

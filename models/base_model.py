@@ -1,28 +1,33 @@
 #!/usr/bin/python3
 """ This file contains the base model for the project. """
 
-import uuid
-import datetime
-import models
+
+from uuid import uuid4
+from datetime import datetime
+from models import storage
 
 
 class BaseModel():
     """ This class defines the base model for the project. """
 
     def __init__(self, *args, **kwargs):
-        """ Initialization of the BaseModel class. """
-        self.updated_at = datetime.datetime.now()
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.datetime.now()
+        """ Initialization of the BaseModel class.
+        Args:
+            arg: Inputs
+            kwargs: Key-word Args
+        """
+        self.updated_at = datetime.now()
+        self.id = str(uuid4())
+        self.created_at = datetime.now()
 
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'updated_at' or key == 'created_at':
-                    value = datetime.datetime.fromisoformat(value)
-                if not key.startswith('__'):
+                    value = datetime.fromisoformat(value)
+                if key.startswith('__'):
                     setattr(self, key, value)  # OR self.__dict__[k] = v
         else:
-            models.storage.new(self)
+            storage.new(self)
 
     def to_dict(self):
         """Returns a dictionary containing all the keys/values of the instance.
@@ -36,8 +41,8 @@ class BaseModel():
     def save(self):
         """Updates: public instance attribute updated_at -> current datetime.
         """
-        self.updated_at = datetime.datetime.now()
-        models.storage.save()
+        self.updated_at = datetime.now()
+        storage.save()
 
     def __str__(self):
         """ String representation of the class. """

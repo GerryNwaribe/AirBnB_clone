@@ -3,7 +3,7 @@
 
 
 import cmd
-import models.base_model
+from  models.base_model import BaseModel
 from models import storage
 from models.user import User
 from models.state import State
@@ -19,6 +19,15 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     cls_name = ["BaseModel", "User", "State",
                 "City", "Amenity", "Place", "Review"]
+    classes = {
+        'BaseModel': BaseModel,
+        'User': User,
+        'Place': Place,
+        'City': City,
+        'Amenity': Amenity,
+        'Review': Review,
+        'State': State,
+        }
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -42,8 +51,11 @@ class HBNBCommand(cmd.Cmd):
         elif _r[0] not in self.cls_name:
             print("** class doesn't exist **")
         else:
-            print(eval(_r[0])().id)
-            storage.save()
+
+            if _r[0] in self.classes:
+                inst = self.classes[_r[0]]()
+                inst.save()
+                print(inst.id)
 
     def do_show(self, arg):
         """Prints the string representation of an instance
