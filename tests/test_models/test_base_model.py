@@ -9,31 +9,22 @@ from time import sleep
 
 
 class TestBaseModel(unittest.TestCase):
-    """Test Case"""
-
     """def test_pycodestyle(self):
         _s = pycodestyle.StyleGuide(quiet=True)
         _r = _s.check_files(['models/base_model.py'])
         self.assertEqual(result.total_errors, 0,
-        "Found code style errors (and warnings).")
+        "Found code style errors (and warnings).")"""
 
     def test_doc(self):
-        import models.base_model
-        self.assertIsNotNone(models.base_model.__doc__)
-
-    def test_doc(self):
-        self.assertIsNotNone(BaseModel.__doc__)
-
-    def test_doc(self):
-        self.assertIsNotNone(BaseModel.__init__.__doc__)"""
-
-    def test_doc(self):
+        """Test Case"""
         self.assertIsNotNone(BaseModel.__str__.__doc__)
 
     def test_doc(self):
+        """Test Case"""
         self.assertIsNotNone(BaseModel.save.__doc__)
 
     def test_doc(self):
+        """Test Case"""
         self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
     def test_string(self):

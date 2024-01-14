@@ -11,5 +11,5 @@ class Review(BaseModel):
     user_id = ""
     text = ""
 
-    """def __init__(self, **kwargs):
-        super().__init__(**kwargs)"""
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
