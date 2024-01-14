@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ This is a simple console application that allows the user to enter a number and"""
 
 
@@ -7,8 +7,10 @@ import models.base_model
 
 
 class HBNBCommand(cmd.Cmd):
-  """ This class inherits from the cmd.Cmd class and defines the commands that can be executed"""
+  """This class inherits from the cmd.Cmd class and defines the cmm that can be exe"""
   prompt = "(hbnb) "
+  cls_name = ["BaseModel", "User", "State",
+              "City", "Amenity", "Place", "Review"]
 
   def do_quit(self, arg):
     """Quit command to exit the program"""
@@ -29,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
     _r = [x.strip() for x in _x]
     if not arg:  # If the class name is missing
       print("** class name missing **")
-    elif arg != models.base_model.BaseModel.__name__:
+    elif arg not in self.cls_name:
       print("** class doesn't exist **")
     else:
       obj = models.base_model.BaseModel()  # Creates a new instance of BaseModel
@@ -42,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
     _r = [x.strip() for x in _x]
     if not _r:  # If the class name is missing
       print("** class name missing **")
-    elif _r[0] != models.base_model.BaseModel.__name__:
+    elif _r[0] not in self.cls_name:
       print("** class doesn't exist **")
     else:
       obj = models.base_model.BaseModel()
@@ -52,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
 
     if len(_r) < 1:
       print("** class name missing **")
-    elif _r[0] not in ["BaseModel"]:
+    elif _r[0] not in self.cls_name:
       print("** class doesn't exist **")
     elif len(_r) < 2:
       print("** instance id missing **")
@@ -83,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
     _x = arg.split()
     _r = [x.strip() for x in _x]
     if arg:
-      if _r[0] not in ["BaseModel"]:
+      if _r[0] not in self.cls_name:
         print("** class doesn't exist **")
         return
     x = [str(obj)
@@ -99,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
     _l = len(_r)
     if _l < 1:
       print("** class name missing **")
-    elif _r[0] not in ["BaseModel"]:
+    elif _r[0] not in self.cls_name:
       print("** class doesn't exist **")
     elif _l < 2:
       print("** instance id missing **")
