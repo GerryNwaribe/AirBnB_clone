@@ -75,19 +75,21 @@ def exec_command(my_console, the_command, last_lines=1):
 """
  Tests
 """
-result = exec_command(my_console, "create User")
+result = exec_command(my_console, "create State")
 if result is None or result == "":
     print("FAIL: No ID retrieved")
 
+with open(file_path, "r") as file:
+    s_file = file.read()
+    if result not in s_file:
+        print("FAIL: New ID not in the JSON file")
+
 model_id = result
-
-result = exec_command(my_console, "show User {}".format(model_id))
-if result is None or result == "":
-    print("FAIL: empty output")
-
-if "[User]" not in result or model_id not in result:
-    print("FAIL: wrong output format: \"{}\"".format(result))
-
+exec_command(my_console, "destroy State {}".format(model_id))
+with open(file_path, "r") as file:
+    s_file = file.read()
+    if result in s_file:
+        print("FAIL: New ID is still in the JSON file")
 print("OK", end="")
 
 shutil.copy("tmp_console_main.py", "console.py")
