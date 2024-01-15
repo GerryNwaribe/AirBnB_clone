@@ -50,8 +50,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
 
-            if _r[0] in self.classes:
-                inst = self.classes[_r[0]]()
+            if _r[0] in HBNBCommand.classes:
+                inst = HBNBCommand.classes[_r[0]]()
                 inst.save()
                 print(inst.id)
 
