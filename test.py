@@ -75,7 +75,7 @@ def exec_command(my_console, the_command, last_lines=1):
 """
  Tests
 """
-result = exec_command(my_console, "create State")
+result = exec_command(my_console, "create City")
 if result is None or result == "":
     print("FAIL: No ID retrieved")
 
@@ -85,7 +85,7 @@ with open(file_path, "r") as file:
         print("FAIL: New ID not in the JSON file")
 
 model_id = result
-exec_command(my_console, "destroy State {}".format(model_id))
+exec_command(my_console, "destroy City {}".format(model_id))
 with open(file_path, "r") as file:
     s_file = file.read()
     if result in s_file:

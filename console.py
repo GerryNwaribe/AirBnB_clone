@@ -16,8 +16,7 @@ class HBNBCommand(cmd.Cmd):
     """This class inherits from the cmd.Cmd class
     and defines the cmmd"""
     prompt = "(hbnb) "
-    cls_name = ["BaseModel", "User", "State",
-                "City", "Amenity", "Place", "Review"]
+    cls_name = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
     classes = {
         'BaseModel': BaseModel,
         'User': User,
@@ -47,7 +46,7 @@ class HBNBCommand(cmd.Cmd):
         _r = [x.strip() for x in _x]
         if not arg:
             print("** class name missing **")
-        elif _r[0] not in self.cls_name:
+        elif _r[0] not in HBNBCommand.cls_name:
             print("** class doesn't exist **")
         else:
 
@@ -64,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
 
         if len(_r) < 1:
             print("** class name missing **")
-        elif _r[0] not in self.cls_name:
+        elif _r[0] not in HBNBCommand.cls_name:
             print("** class doesn't exist **")
         elif len(_r) < 2:
             print("** instance id missing **")
@@ -80,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         _r = [x.strip() for x in _x]
         if len(_r) < 1:
             print("** class name missing **")
-        elif _r[0] not in self.cls_name:
+        elif _r[0] not in HBNBCommand.cls_name:
             print("** class doesn't exist **")
         elif len(_r) < 2:
             print("** instance id missing **")
@@ -97,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
         _x = arg.split()
         _r = [x.strip() for x in _x]
         if arg:
-            if _r[0] not in self.cls_name:
+            if _r[0] not in HBNBCommand.cls_name:
                 print("** class doesn't exist **")
                 return
         x = [str(obj) for obj in models.storage.all().values()]
@@ -111,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
         _l = len(_r)
         if _l < 1:
             print("** class name missing **")
-        elif _r[0] not in self.cls_name:
+        elif _r[0] not in HBNBCommand.cls_name:
             print("** class doesn't exist **")
         elif _l < 2:
             print("** instance id missing **")
