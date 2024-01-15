@@ -23,11 +23,12 @@ class BaseModel():
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'updated_at' or key == 'created_at':
+                    # OR setattr(self, key, datetime.strptime(value, time_format))
                     value = datetime.fromisoformat(value)
                 if key != '__class__':
                     self.__dict__[key] = value  # Or setattr(self, key, value)
-        else:
-            models.storage.new(self)
+
+        models.storage.new(self)
 
     def to_dict(self):
         """Returns a dictionary containing all the keys/values of the instance.

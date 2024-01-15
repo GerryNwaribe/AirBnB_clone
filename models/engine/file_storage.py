@@ -23,19 +23,19 @@ class FileStorage():
 
     def all(self):
         """ Return the dictionary of objects. """
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """ Add a new object to the dictionary. """
-        self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
+        FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
         """ Save the dictionary to the file. """
-        _all_obj = self.__objects
+        _all_obj = FileStorage.__objects
         x = {}
         for o in _all_obj.keys():
             x[o] = _all_obj[o].to_dict()
-        with open(self.__file_path,  "w") as f:
+        with open(FileStorage.__file_path,  "w") as f:
             json.dump(x, f)
 
     def reload(self):
@@ -43,7 +43,7 @@ class FileStorage():
         if not os.path.isfile(FileStorage.__file_path):
             return
         try:
-            with open(self.__file_path) as f:
+            with open(FileStorage.__file_path) as f:
                 _ob = json.load(f)
                 for o in _ob.values():
                     _cls = o.pop("__class__")
