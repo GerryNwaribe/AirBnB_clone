@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
         _r = [x.strip() for x in _x]
         if len(_r) < 1:
             print("** class name missing **")
-        elif _r[0] not in ["BaseModel"]:
+        elif _r[0] not in self.cls_name:
             print("** class doesn't exist **")
         elif len(_r) < 2:
             print("** instance id missing **")
