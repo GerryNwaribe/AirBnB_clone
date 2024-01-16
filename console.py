@@ -59,9 +59,11 @@ class HBNBCommand(cmd.Cmd):
                 for c in s:
                     print(c, end="")
                 print(", " if i < len(z) else "]")
+            return True
 
         else:
             print(f"*** Unknown syntax: {ln}")
+            return False
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
