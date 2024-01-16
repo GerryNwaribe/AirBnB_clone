@@ -8,16 +8,17 @@ from models.base_model import BaseModel
 from models.review import Review
 from time import sleep
 
+
 class TestReview(unittest.TestCase):
     """Test Review class"""
-    
+
     def test_pycodestyle(self):
         """Test that the code follows pycodestyle guidelines"""
         style = pycodestyle.StyleGuide(quiet=True)
         result = style.check_files(['models/review.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
-    
+
     def setUp(self):
         """Set up for the test"""
         self.review = Review()
@@ -50,7 +51,8 @@ class TestReview(unittest.TestCase):
 
     def test_str_method(self):
         """Test str method of Review class"""
-        expected_str = "[Review] ({}) {}".format(self.review.id, self.review.__dict__)
+        expected_str = "[Review] ({}) {}".format(
+            self.review.id, self.review.__dict__)
         self.assertEqual(str(self.review), expected_str)
 
     def test_create_instance_with_dict(self):
@@ -68,6 +70,7 @@ class TestReview(unittest.TestCase):
         self.assertEqual(new_review.place_id, '123')
         self.assertEqual(new_review.user_id, '456')
         self.assertEqual(new_review.text, 'Great experience!')
+
 
 if __name__ == '__main__':
     unittest.main()

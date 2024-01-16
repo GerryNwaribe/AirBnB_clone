@@ -8,9 +8,10 @@ from models.base_model import BaseModel
 from models.city import City
 from time import sleep
 
+
 class TestCity(unittest.TestCase):
     """Test City class"""
-    
+
     def test_pycodestyle(self):
         """Test that the code follows pycodestyle guidelines"""
         style = pycodestyle.StyleGuide(quiet=True)
@@ -51,7 +52,8 @@ class TestCity(unittest.TestCase):
 
     def test_str_method(self):
         """Test str method of City class"""
-        expected_str = "[City] ({}) {}".format(self.city.id, self.city.__dict__)
+        expected_str = "[City] ({}) {}".format(
+            self.city.id, self.city.__dict__)
         self.assertEqual(str(self.city), expected_str)
 
     def test_create_instance_with_dict(self):
@@ -70,6 +72,7 @@ class TestCity(unittest.TestCase):
         self.assertEqual(new_city.id, '456')
         self.assertIsInstance(new_city.created_at, datetime)
         self.assertIsInstance(new_city.updated_at, datetime)
+
 
 if __name__ == '__main__':
     unittest.main()

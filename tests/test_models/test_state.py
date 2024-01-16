@@ -42,7 +42,8 @@ class TestState(unittest.TestCase):
 
     def test_str_method(self):
         """Test str method of State class"""
-        expected_str = "[State] ({}) {}".format(self.state.id, self.state.__dict__)
+        expected_str = "[State] ({}) {}".format(
+            self.state.id, self.state.__dict__)
         self.assertEqual(str(self.state), expected_str)
 
     def test_create_instance_with_dict(self):
@@ -59,6 +60,7 @@ class TestState(unittest.TestCase):
         self.assertEqual(new_state.id, '123')
         self.assertIsInstance(new_state.created_at, datetime)
         self.assertIsInstance(new_state.updated_at, datetime)
+
 
 if __name__ == '__main__':
     unittest.main()

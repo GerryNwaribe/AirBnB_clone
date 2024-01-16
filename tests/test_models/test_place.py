@@ -8,16 +8,17 @@ from models.base_model import BaseModel
 from models.place import Place
 from time import sleep
 
+
 class TestPlace(unittest.TestCase):
     """Test Place class"""
-    
+
     def test_pycodestyle(self):
         """Test that the code follows pycodestyle guidelines"""
         style = pycodestyle.StyleGuide(quiet=True)
         result = style.check_files(['models/place.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
-    
+
     def setUp(self):
         """Set up for the test"""
         self.place = Place()
@@ -42,7 +43,8 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(self.place.city_id, "123")
         self.assertEqual(self.place.user_id, "456")
         self.assertEqual(self.place.name, "Cozy Cabin")
-        self.assertEqual(self.place.description, "A beautiful cabin in the woods")
+        self.assertEqual(self.place.description,
+                         "A beautiful cabin in the woods")
         self.assertEqual(self.place.number_rooms, 2)
         self.assertEqual(self.place.number_bathrooms, 1)
         self.assertEqual(self.place.max_guest, 4)
@@ -57,7 +59,8 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(place_dict['city_id'], "123")
         self.assertEqual(place_dict['user_id'], "456")
         self.assertEqual(place_dict['name'], "Cozy Cabin")
-        self.assertEqual(place_dict['description'], "A beautiful cabin in the woods")
+        self.assertEqual(place_dict['description'],
+                         "A beautiful cabin in the woods")
         self.assertEqual(place_dict['number_rooms'], 2)
         self.assertEqual(place_dict['number_bathrooms'], 1)
         self.assertEqual(place_dict['max_guest'], 4)
@@ -74,7 +77,8 @@ class TestPlace(unittest.TestCase):
 
     def test_str_method(self):
         """Test str method of Place class"""
-        expected_str = "[Place] ({}) {}".format(self.place.id, self.place.__dict__)
+        expected_str = "[Place] ({}) {}".format(
+            self.place.id, self.place.__dict__)
         self.assertEqual(str(self.place), expected_str)
 
     def test_create_instance_with_dict(self):
@@ -100,7 +104,8 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(new_place.city_id, '123')
         self.assertEqual(new_place.user_id, '456')
         self.assertEqual(new_place.name, 'Cozy Cabin')
-        self.assertEqual(new_place.description, 'A beautiful cabin in the woods')
+        self.assertEqual(new_place.description,
+                         'A beautiful cabin in the woods')
         self.assertEqual(new_place.number_rooms, 2)
         self.assertEqual(new_place.number_bathrooms, 1)
         self.assertEqual(new_place.max_guest, 4)
@@ -108,6 +113,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(new_place.latitude, 42.123)
         self.assertEqual(new_place.longitude, -71.456)
         self.assertEqual(new_place.amenity_ids, ["789", "012"])
+
 
 if __name__ == '__main__':
     unittest.main()

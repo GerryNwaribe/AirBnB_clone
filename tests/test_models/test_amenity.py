@@ -8,16 +8,17 @@ from models.base_model import BaseModel
 from models.amenity import Amenity
 from time import sleep
 
+
 class TestAmenity(unittest.TestCase):
     """Test Amenity class"""
-    
+
     def test_pycodestyle(self):
         """Test that the code follows pycodestyle guidelines"""
         style = pycodestyle.StyleGuide(quiet=True)
         result = style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
-        
+
     def setUp(self):
         """Set up for the test"""
         self.amenity = Amenity()
@@ -48,7 +49,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_str_method(self):
         """Test str method of amenity class"""
-        expected_str = "[Amenity] ({}) {}".format(self.amenity.id, self.amenity.__dict__)
+        expected_str = "[Amenity] ({}) {}".format(
+            self.amenity.id, self.amenity.__dict__)
         self.assertEqual(str(self.amenity), expected_str)
 
     def test_create_instance_with_dict(self):
@@ -65,6 +67,7 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(new_amenity.id, '123')
         self.assertIsInstance(new_amenity.created_at, datetime)
         self.assertIsInstance(new_amenity.updated_at, datetime)
+
 
 if __name__ == '__main__':
     unittest.main()

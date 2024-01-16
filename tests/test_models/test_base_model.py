@@ -11,7 +11,6 @@ from time import sleep
 class TestBaseModel(unittest.TestCase):
     """Test Basemodel"""
 
-
     def setUp(self):
         """Set up a BaseModel instance for testing"""
         self.my_model = BaseModel()
@@ -28,7 +27,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_str(self):
         """Test the __str__ method of BaseModel"""
-        expected_str = "[BaseModel] ({}) {}".format(self.my_model.id, self.my_model.__dict__)
+        expected_str = "[BaseModel] ({}) {}".format(
+            self.my_model.id, self.my_model.__dict__)
         self.assertEqual(str(self.my_model), expected_str)
 
     def test_save(self):
@@ -41,8 +41,11 @@ class TestBaseModel(unittest.TestCase):
         """Test the to_dict method of BaseModel"""
         obj_dict = self.my_model.to_dict()
         self.assertEqual(obj_dict['__class__'], 'BaseModel')
-        self.assertEqual(obj_dict['created_at'], self.my_model.created_at.isoformat())
-        self.assertEqual(obj_dict['updated_at'], self.my_model.updated_at.isoformat())
+        self.assertEqual(obj_dict['created_at'],
+                         self.my_model.created_at.isoformat())
+        self.assertEqual(obj_dict['updated_at'],
+                         self.my_model.updated_at.isoformat())
+
 
 if __name__ == '__main__':
     unittest.main()

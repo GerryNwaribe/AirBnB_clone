@@ -16,7 +16,9 @@ class HBNBCommand(cmd.Cmd):
     """This class inherits from the cmd.Cmd class
     and defines the cmmd"""
     prompt = "(hbnb) "
-    cls_name = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
+    cls_name = [
+        "BaseModel", "User", "State", "City", "Amenity", "Place", "Review"
+        ]
     classes = {
         'BaseModel': BaseModel,
         'User': User,
