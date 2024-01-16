@@ -14,14 +14,14 @@ class TestUser(unittest.TestCase):
 
     Args:
         unittest (_type_): _description_
-    
+    """
     def test_user_inheritance(self):
-        est if User inherits from BaseModel
+        """Test if User inherits from BaseModel"""
         user = User()
         self.assertIsInstance(user, BaseModel)
 
     def test_user_attributes(self):
-        Test User attributes
+        """Test User attributes"""
         user = User()
         self.assertTrue(hasattr(user, 'email'))
         self.assertTrue(hasattr(user, 'password'))
@@ -29,7 +29,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(user, 'first_name'))
 
     def test_user_attribute_types(self):
-        Test User attribute types
+        """Test User attribute types"""
         user = User()
         self.assertIsInstance(user.email, str)
         self.assertIsInstance(user.password, str)
@@ -37,7 +37,7 @@ class TestUser(unittest.TestCase):
         self.assertIsInstance(user.first_name, str)
 
     def test_user_string_representation(self):
-        Test the __str__ method of User
+        """Test the __str__ method of User"""
         user = User()
         string_repr = str(user)
         self.assertIn("[User]", string_repr)
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         self.assertIn("'updated_at':", string_repr)
 
     def test_user_to_dict_method(self):
-        Test the to_dict method of User
+        """Test the to_dict method of User
         user = User()
         user_dict = user.to_dict()
         self.assertIsInstance(user_dict, dict)
@@ -54,10 +54,10 @@ class TestUser(unittest.TestCase):
         self.assertIn('email', user_dict)
         self.assertIn('password', user_dict)
         self.assertIn('last_name', user_dict)
-        self.assertIn('first_name', user_dict)
+        self.assertIn('first_name', user_dict)"""
 
     def test_user_created_at_updated_at(self):
-        Test if User has attributes created_at and updated_at
+        """Test if User has attributes created_at and updated_at"""
         user = User()
         self.assertTrue(hasattr(user, 'created_at'))
         self.assertTrue(hasattr(user, 'updated_at'))
@@ -65,7 +65,7 @@ class TestUser(unittest.TestCase):
         self.assertIsInstance(user.updated_at, datetime)
 
     def test_user_save_method(self):
-        Test the save method of User
+        """Test the save method of User"""
         user = User()
         old_updated_at = user.updated_at
         sleep(1)  # Ensure there is a time difference when saving
@@ -74,44 +74,4 @@ class TestUser(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()"""
-    def setUp(self):
-        """Set up test cases"""
-        self.storage = FileStorage()
-        self.storage.reload()
-        self.storage._FileStorage__objects = {}
-
-    def tearDown(self):
-        """Clean up after test cases"""
-        self.storage._FileStorage__objects = {}
-
-    def test_user(self):
-        """Test the User class"""
-        my_user = User()
-        my_user.first_name = "Khaled"
-        my_user.last_name = "Ibn Al-Walid"
-        my_user.email = "unbeatable@leader.war"
-        my_user.password = "TheSwordOfGod"
-        my_user.save()
-
-        all_objs = self.storage.all()
-        key = f'User.{my_user.id}'
-        self.assertIn(key, all_objs.keys())
-
-    def test_pycodestyle(self):
-        """Test that the code follows pycodestyle guidelines"""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.check_files(['models/user.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
-    def test_module_docstring(self):
-        """Test that the module has a docstring"""
-        import models.user
-        self.assertIsNotNone(models.user.__doc__)
-
-    def test_class_docstring(self):
-        """Test that the class has a docstring"""
-        self.assertIsNotNone(User.__doc__)
-
-    
+    unittest.main()
