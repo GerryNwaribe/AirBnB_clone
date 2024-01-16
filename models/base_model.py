@@ -22,15 +22,6 @@ class BaseModel:
             self.created_at = self.updated_at = datetime.now()
             models.storage.new(self)
 
-      if kwargs:
-        for key, value in kwargs.items():
-          if key == 'updated_at' or key == 'created_at':
-            value = datetime.datetime.fromisoformat(value)
-          if not key.startswith('__'):
-            setattr(self, key, value)  # OR self.__dict__[k] = v
-      else:
-        models.storage.new(self)
-
     def to_dict(self):
       """ Returns a dictionary containing all the keys/values of the instance. """
       _all_att = self.__dict__.copy()
