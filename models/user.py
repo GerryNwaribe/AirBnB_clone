@@ -12,10 +12,4 @@ class User(BaseModel):
     last_name = ""
     first_name = ""
 
-    def __init__(self, *args, **kwargs):
-       super().__init__(*args, **kwargs)
-       if not kwargs:
-           self.email = ""
-           self.password = ""
-           self.last_name = ""
-           self.first_name = ""
+    
