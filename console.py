@@ -53,13 +53,11 @@ class HBNBCommand(cmd.Cmd):
                 if _r[0] in k:
                     z.append(str(v))
             for s in z:
-                if i == 0:
-                    print("[", end="")
                 i += 1
                 for c in s:
                     print(c, end="")
-                print(", " if i < len(z) else "]")
-            return True
+                print(", " if i < len(z) else "")
+            # return True
 
         else:
             print(f"*** Unknown syntax: {ln}")
