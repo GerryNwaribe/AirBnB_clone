@@ -2,14 +2,15 @@
 """ This is a simple console application"""
 
 import cmd
-from models.base_model import BaseModel
+import re
 import models
 from models.user import User
-from models.state import State
 from models.city import City
+from models.state import State
 from models.place import Place
-from models.amenity import Amenity
 from models.review import Review
+from models.amenity import Amenity
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -18,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     cls_name = [
         "BaseModel", "User", "State", "City", "Amenity", "Place", "Review"
-        ]
+    ]
     classes = {
         'BaseModel': BaseModel,
         'User': User,
@@ -27,7 +28,40 @@ class HBNBCommand(cmd.Cmd):
         'Amenity': Amenity,
         'Review': Review,
         'State': State,
-        }
+    }
+
+    def preloop(self):
+        """Called once before the command loop starts"""
+        pass
+
+    def default(self, arg):
+        """Called for unrecognized commands"""
+        ln = arg.strip()
+        match = re.match(r'^(\w+)\.all\(\)$', ln)
+
+        if match:
+            print("Matched")
+            _x = ln.split('.')
+            _r = [x for x in _x]
+            z = []
+            i = 0
+
+            if _r[0] not in HBNBCommand.cls_name:
+                print("** class doesn't exist **")
+                return
+            for k, v in models.storage.all().items():
+                if _r[0] in k:
+                    z.append(str(v))
+            for s in z:
+                if i == 0:
+                    print("[", end="")
+                i += 1
+                for c in s:
+                    print(c, end="")
+                print(", " if i < len(z) else "]")
+
+        else:
+            print(f"*** Unknown syntax: {ln}")
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
