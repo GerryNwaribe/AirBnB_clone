@@ -13,6 +13,13 @@ import os
 
 class TestFileStorage(unittest.TestCase):
     """Test cases for the FileStorage class"""
+    
+    def test_pycodestyle(self):
+        """Test that the code follows pycodestyle guidelines"""
+        style = pycodestyle.StyleGuide(quiet=True)
+        result = style.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
     def setUp(self):
         """Set up a FileStorage instance for testing"""

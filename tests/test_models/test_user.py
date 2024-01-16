@@ -15,6 +15,13 @@ class TestUser(unittest.TestCase):
     Args:
         unittest (_type_): _description_
     """
+    def test_pycodestyle(self):
+        """Test that the code follows pycodestyle guidelines"""
+        style = pycodestyle.StyleGuide(quiet=True)
+        result = style.check_files(['models/user.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+        
     def test_user_inheritance(self):
         """Test if User inherits from BaseModel"""
         user = User()

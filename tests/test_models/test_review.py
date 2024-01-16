@@ -11,6 +11,13 @@ from time import sleep
 class TestReview(unittest.TestCase):
     """Test Review class"""
     
+    def test_pycodestyle(self):
+        """Test that the code follows pycodestyle guidelines"""
+        style = pycodestyle.StyleGuide(quiet=True)
+        result = style.check_files(['models/review.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+    
     def setUp(self):
         """Set up for the test"""
         self.review = Review()
