@@ -1,27 +1,26 @@
-.container .filter {
-    color: white;
+.filters {
+    background-color: white;
     height: 70px;
     width: 100%;
-    border: 1px #DDDDDD;
+    border: 1px solid #DDDDDD;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+
 }
 
-.container .filters button {
+.first_button {
     font-size: 18px;
-    background-color: #FF5A5F;
+    background-color:  #FF5A5F;
     color: #FFFFFF;
     height: 48px;
     width: 20%;
-    border: 0;
     border-radius: 4px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 30px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    border: 0px;
+    margin-left: 770px;
+
 }
 
-.container .filters button:hover {
-    opacity: 1;
+.first_button:hover {
+    opacity: 90%;
 }
