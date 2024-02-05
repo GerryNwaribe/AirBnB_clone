@@ -33,12 +33,11 @@ section button:hover {
 
 .filters .locations{
     width: 25%;
-    border: 3px solid blue;
+    border-right: solid 1px #DDDDDD;
 }
 
 .filters .amenities{
     width: 25%;
-    border: 3px solid red;
 }
 
 .locations h3, .amenities h3{
