@@ -42,12 +42,12 @@ section button:hover {
     border: 3px solid red;
 }
 
-.filters .amenities .amenities_h3{
+.locations h3, .amenities h3{
     weight: 600;
 
 }
 
-.filters .amenities .amenities_h4{
+.locations h4, .amenities h4{
     weight: 400;
     font-size: 14px;
     margin-top: 0px;
