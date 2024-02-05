@@ -7,6 +7,7 @@
     text-align: right;
 }
 
+
 section button{
     margin-top: 11px;
     margin-bottom: 11px;
@@ -19,6 +20,19 @@ section button{
     border: none;
     border-radius: 4px;
 }
+
+
 section button:hover {
     opacity: 0.9;
+}
+
+
+.filters .amenities{
+    border: 1px solid red;
+}
+
+
+.filters .locations{
+    border: 1px solid blue;
+
 }
