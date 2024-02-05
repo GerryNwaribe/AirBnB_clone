@@ -8,7 +8,7 @@ body {
 
 
 .container {
-
+    border-color: 10px solid red;
     max-width: 1000px;
     margin-top: 30px;
     margin-bottom: 30px;
