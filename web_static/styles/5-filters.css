@@ -32,25 +32,26 @@ section button:hover {
 
 
 .filters .locations{
-    width: 40%;
+    width: 50%;
     border-right: solid 1px #DDDDDD;
 
 }
 
 .filters .amenities{
-    width: 40%;
+    width: 50%;
 }
 
 .locations h3, .amenities h3{
     text-align: left;
-    padding-left: 50px;
+    padding-left: 45px;
     weight: 600;
     margin-bottom: 3px;
 
 }
 
 .locations h4, .amenities h4{
-    text-align: center;
+    padding-left: 45px;
+    text-align: left;
     weight: 400;
     font-size: 14px;
     margin-top: 3px;
