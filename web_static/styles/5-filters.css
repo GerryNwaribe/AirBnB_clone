@@ -21,6 +21,8 @@
     border: none;
     border-radius: 4px;
 }
+
+
 section button:hover {
     opacity: 0.9;
 }
@@ -29,12 +31,13 @@ section button:hover {
 .filters .locations{
     width: 40%;
     border-right: solid 1px #DDDDDD;
-
 }
+
 
 .filters .amenities{
     width: 90%;
 }
+
 
 .locations h3, .amenities h3{
     text-align: left;
@@ -43,6 +46,7 @@ section button:hover {
     margin-bottom: 3px;
 
 }
+
 
 .locations h4, .amenities h4{
     padding-left: 45px;
