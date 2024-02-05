@@ -34,7 +34,9 @@ section button:hover {
 .filters .locations{
     width: 25%;
     border-right: solid 1px #DDDDDD;
-    
+    display: flex;
+    justify-content: ;
+
 }
 
 .filters .amenities{
