@@ -33,13 +33,13 @@ section button:hover {
 
 .filters .amenities .amenities_h3{
     weight: 600;
-    margin-top: 0px;
 
 }
 
 .filters .amenities .amenities_h4{
     weight: 400;
     font-size: 14px;
+    margin-top: 0px;
 
 }
 
