@@ -31,8 +31,19 @@ section button:hover {
     border: 1px solid red;
 }
 
+.filters .amenities .amenities_h3{
+    weight: 600;
+
+}
+
+.filters .amenities .amenities_h4{
+    weight: 400;
+    front-size: 14px;
+
+}
 
 .filters .locations{
     border: 1px solid blue;
 
 }
+
