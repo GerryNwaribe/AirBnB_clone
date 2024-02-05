@@ -9,7 +9,6 @@
 
 }
 
-
 section button{
     margin-top: 11px;
     margin-bottom: 11px;
@@ -22,6 +21,10 @@ section button{
     border: none;
     border-radius: 4px;
 }
+.filters .bttn{
+    border: 1px solid red;
+}
+
 
 
 section button:hover {
