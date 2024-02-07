@@ -65,14 +65,22 @@ section button:hover {
 }
 
 
-
-.locations ul, .amenities ul {
+.amenities ul {
+    list-style: none;
+    background-color:  #FAFAFA;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+}
+.locations ul {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
+    border: 1px solid red;
 }
 
 #locations_list h2 {
