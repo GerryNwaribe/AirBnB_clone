@@ -82,6 +82,9 @@ section button:hover {
 .popover1, .popover2 {
     display: none;
 }
+.locations:hover, .amenities:hover  {
+    background-color:  #FAFAFA;
+}
 .locations:hover .popover1 {
     display: block;
 }
