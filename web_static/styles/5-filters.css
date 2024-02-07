@@ -29,10 +29,6 @@ section button:hover {
 }
 
 
-.filters .bttn{
-    border: 1px solid red;
-    border-right: solid 1px #DDDDDD;
-}
 .filters .locations{
     border: 1px solid red;
     border-right: solid 1px #DDDDDD;
