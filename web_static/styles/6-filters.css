@@ -79,11 +79,14 @@ section button:hover {
     font-size: 16px;
 }
 
-.popover {
+.popover1, .popover2 {
     display: none;
 }
-.locations:hover {
-    display: none;
+.locations:hover .popover1 {
+    display: block;
+}
+.amenities:hover .popover2 {
+    display: block;
 }
 
 
