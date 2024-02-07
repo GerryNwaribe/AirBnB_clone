@@ -70,7 +70,6 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
-    border: 1px solid red;
     padding: 20px;
     display: block;
 }
