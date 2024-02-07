@@ -64,33 +64,26 @@ section button:hover {
     margin-top: 3px;
 }
 
-.locations ul, .amenities ul, .sub_popover {
-    display: none;
-    list-style: none;
-    background-color:  #FAFAFA;
-    text-align: left;
-    position: absolute;
-}
-
-.locations li {
-    padding-bottom: 5px;
-}
-
 .amenities ul  {
     padding: 30px;
 }
-.locations .sub_popover{
-    padding: 5px;
+.locations ul, .amenities ul {
+    list-style: none;
+    background-color:  #FAFAFA;
+    text-align: left;
 }
-
 
 .popover h2 {
     padding-top: 10px;
     margin: 5px;
     font-size: 16px;
 }
+
 .popover {
-    display: block;
+    display: none;
+}
+.popover:hover {
+    display: none;
 }
 
 
