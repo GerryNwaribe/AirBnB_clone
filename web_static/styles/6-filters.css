@@ -8,10 +8,10 @@ section.filters{
     text-align: right;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 #group {
+    cursor: pointer;
     display: flex;
     width: 70%;
 }
