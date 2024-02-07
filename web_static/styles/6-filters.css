@@ -62,4 +62,6 @@ section button:hover {
 }
 
 
-
+.filter ul {
+    list-style: none;
+}
