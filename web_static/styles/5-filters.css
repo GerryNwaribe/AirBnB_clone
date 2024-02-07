@@ -13,6 +13,7 @@ section.filters{
 #group {
     display: flex;
     border: 1px solid blue;
+    width: 70%;
 }
 
 #search_button{
