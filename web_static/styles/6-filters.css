@@ -68,7 +68,6 @@ section button:hover {
 }
 
 ul li {
-    display: flex;
-    padding: 0;
-
+    display: inline-block;
+    position: relative;
 }
