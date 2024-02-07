@@ -82,8 +82,8 @@ section button:hover {
 .popover {
     display: none;
 }
-.popover:fi {
-    display: block;
+.locations:hover {
+    display: none;
 }
 
 
