@@ -10,6 +10,11 @@ section.filters{
     justify-content: space-between;
 }
 
+#group {
+    display: flex;
+    border: 1px solid blue;
+}
+
 #search_button{
     margin-top: 11px;
     margin-bottom: 11px;
