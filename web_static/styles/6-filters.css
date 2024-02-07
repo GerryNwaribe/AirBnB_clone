@@ -75,9 +75,9 @@ section button:hover {
     display: block;
 }
 
-#list1 h2 {
+#locations_list h2 {
     font-size: 16px;
-    border: 1px solid red;
+    margin-bottom: 0;
 
 }
 
