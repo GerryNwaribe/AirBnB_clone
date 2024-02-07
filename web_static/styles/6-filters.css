@@ -72,10 +72,13 @@ section button:hover {
 
 .amenities ul  {
     padding: 30px;
+    border: 1px solid red;
 }
 
 
 .popover h2 {
+    padding-top: 20px;
+    margin: 5px;
     font-size: 16px;
 }
 
