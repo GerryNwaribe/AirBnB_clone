@@ -72,7 +72,11 @@ section button:hover {
 
 .amenities ul  {
     padding: 30px;
+}
+.locations ul  {
     border: 1px solid red;
+    padding-bottom: 0px;
+
 }
 
 
