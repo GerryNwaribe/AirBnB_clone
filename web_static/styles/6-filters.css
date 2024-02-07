@@ -81,16 +81,15 @@ section button:hover {
     padding-bottom: 20px;
     display: block;
     border: 1px solid red;
+
 }
 
-#locations_list h2 {
+.popover h2 {
     font-size: 16px;
     margin-bottom: 0;
-
 }
 
-
-
+.sub_popover {
 }
 
 
