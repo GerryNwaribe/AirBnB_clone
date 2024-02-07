@@ -76,7 +76,9 @@ section button:hover {
 }
 
 .locations li, .amenities li {#
-    padding: 0px;
+    margin: 0;
+    border: 1px solid red;
+
 
 }
 
