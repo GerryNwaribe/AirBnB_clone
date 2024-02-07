@@ -79,7 +79,8 @@ section button:hover {
     font-size: 16px;
 }
 
-.popover1, .popover2 {
+
+/* .popover1, .popover2 {
     display: none;
 }
 .locations:hover, .amenities:hover  {
@@ -90,8 +91,7 @@ section button:hover {
 }
 .amenities:hover .popover2 {
     display: block;
-}
-
+} */
 
 
 
