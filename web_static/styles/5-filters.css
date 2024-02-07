@@ -34,8 +34,12 @@ section button:hover {
 }
 
 
-.filters .locations, .filters .amenities {
+.filters .locations {
     border-right: solid 1px #DDDDDD;
+    width: 35%;
+}
+
+.filters .amenities {
     width: 35%;
 }
 
