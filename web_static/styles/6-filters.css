@@ -75,7 +75,11 @@ section button:hover {
     display: block;
 }
 
-.locations li, .amenities li {#
+#list h2 {
+    font-size: 16px;
+    border: 1px solid red;
+
+}
 
 
 
