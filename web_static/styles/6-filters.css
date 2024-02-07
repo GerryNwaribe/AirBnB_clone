@@ -68,14 +68,8 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
-}
-.amenities ul {
     padding-top: 30px;
     padding-bottom: 30px;
-}
-.locations ul {
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .popover h2 {
