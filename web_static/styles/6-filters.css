@@ -69,4 +69,5 @@ section button:hover {
 
 ul li {
     display: inline-block;
+    position: relative;
 }
