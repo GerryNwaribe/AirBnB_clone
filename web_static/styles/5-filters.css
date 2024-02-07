@@ -30,13 +30,11 @@ section button:hover {
 
 
 .filters .locations{
-    width: 40%;
     border-right: solid 1px #DDDDDD;
 }
 
 
 .filters .amenities{
-    width: 90%;
 }
 
 
