@@ -65,6 +65,7 @@ section button:hover {
 }
 
 .locations ul, .amenities ul, .sub_popover {
+    display: none;
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
