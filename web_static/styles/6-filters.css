@@ -70,6 +70,10 @@ section button:hover {
     text-align: left;
 }
 
+.locations li {
+    padding-bottom: 5px;
+}
+
 .amenities ul  {
     padding: 30px;
 }
