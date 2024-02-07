@@ -71,6 +71,7 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
+    border: 1px solid red;
 }
 
 .popover h2 {
