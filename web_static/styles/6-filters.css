@@ -67,6 +67,6 @@ section button:hover {
     background-color:  #FAFAFA;
 }
 
-{
+ul li {
     display: inline-block;
 }
