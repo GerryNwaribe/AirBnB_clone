@@ -62,7 +62,7 @@ section button:hover {
 }
 
 
-.filter ul {
+.locations ul, .amenities ul {
     list-style: none;
     background-color:  #FAFAFA;
 }
