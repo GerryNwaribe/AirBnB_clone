@@ -66,8 +66,11 @@ section button:hover {
 
 .amenities ul  {
     padding: 30px;
+    list-style: none;
+    background-color:  #FAFAFA;
+    text-align: left;
 }
-.locations ul, .amenities ul {
+.locations li {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
