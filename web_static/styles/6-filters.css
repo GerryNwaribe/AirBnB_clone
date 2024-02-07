@@ -3,7 +3,7 @@ section.filters{
     background-color: white;
     height: 70px;
     width: 100%;
-    border: solid 5px #DDDDDD;
+    border: solid 1px #DDDDDD;
     border-radius: 4px;
     text-align: right;
     display: flex;
@@ -68,7 +68,6 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
 
-    border: 1px solid red;
 }
 
 
