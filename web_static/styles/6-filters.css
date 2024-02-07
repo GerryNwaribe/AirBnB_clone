@@ -68,21 +68,15 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
+
 
 .popover h2 {
     font-size: 16px;
-    margin-bottom: 0;
     border: 1px solid blue;
+    margin-bottom: 5px;
 }
 
-
-.popover li {
-    padding 10px;
-    border: 1px solid red;
-}
 
 
 
