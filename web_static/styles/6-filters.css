@@ -71,9 +71,14 @@ section button:hover {
     background-color:  #FAFAFA;
     text-align: left;
     border: 1px solid red;
-    padding: 30px;
+    padding: 20px;
     display: block;
+}
+
+.locations li, .amenities li {#
+    padding: 0px;
 
 }
+
 
 
