@@ -68,6 +68,7 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
+    position: absolute;
 }
 
 .locations li {
