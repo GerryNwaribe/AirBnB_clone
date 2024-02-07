@@ -75,9 +75,13 @@ section button:hover {
 .popover h2 {
     font-size: 16px;
     margin-bottom: 0;
+    border: 1px solid blue;
 }
 
-.sub_popover {
+
+.popover li {
+    padding 10px;
+    border: 1px solid red;
 }
 
 
