@@ -64,7 +64,7 @@ section button:hover {
     margin-top: 3px;
 }
 
-.locations ul, .amenities ul  {
+.locations ul, .amenities ul, .sub_popover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
@@ -73,13 +73,13 @@ section button:hover {
 .amenities ul  {
     padding: 30px;
 }
-.locations .sub_popover  {
-
-    padding: 30px;
+.locations .sub_popover{
+    padding: 5px;
 }
 
 
 .popover h2 {
+    padding-top: 10px;
     margin: 5px;
     font-size: 16px;
 }
