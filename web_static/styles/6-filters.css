@@ -73,14 +73,13 @@ section button:hover {
 .amenities ul  {
     padding: 30px;
 }
-.locations ul  {
-    padding-bottom: 20px;
+.locations .sub_popover  {
 
+    padding: 30px;
 }
 
 
 .popover h2 {
-    padding-top: 20px;
     margin: 5px;
     font-size: 16px;
 }
