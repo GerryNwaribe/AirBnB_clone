@@ -38,13 +38,11 @@ section button:hover {
 .filters .locations {
     border-right: solid 1px #DDDDDD;
     width: 35%;
-    border: 1px solid red;
     cursor: pointer;
 }
 
 .filters .amenities {
     width: 35%;
-    border: 1px solid red;
     cursor: pointer;
 }
 
