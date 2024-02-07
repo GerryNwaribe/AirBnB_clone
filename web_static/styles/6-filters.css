@@ -74,8 +74,7 @@ section button:hover {
     padding: 30px;
 }
 .locations ul  {
-    border: 1px solid red;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
 
 }
 
