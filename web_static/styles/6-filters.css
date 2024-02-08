@@ -70,10 +70,12 @@ section button:hover {
     font-size: 16px;
 }
 .popover1 li {
+    padding-bottom: 5px;
 
 }
 .popover1 {
     padding-top: 25px;
+    padding-bottom: 35px;
 }
 
 .locations ul {
@@ -82,9 +84,6 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
 }
-
-
-
 
 /* .popover1, .popover2 {
     display: none;
