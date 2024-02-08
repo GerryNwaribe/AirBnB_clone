@@ -59,7 +59,12 @@ section button:hover {
     weight: 600;
     margin-bottom: 3px;
 }
-.amenities ul {
+.popover1 {
+    border: 1px solid red;
+    padding: 40px;
+
+}
+.popover2  {
     text-align: left;
     padding: 40px;
     list-style: none;
@@ -75,11 +80,6 @@ section button:hover {
 
 .popover1 h2, .popover2 h2 {
     font-size: 16px;
-}
-.popover1 {
-    border: 1px solid red;
-    padding: 30px;
-
 }
 
 
