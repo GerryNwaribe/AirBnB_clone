@@ -11,6 +11,8 @@ section.filters{
 }
 
 #group {
+    border: 1px solid red;
+
     display: flex;
     width: 70%;
 }
