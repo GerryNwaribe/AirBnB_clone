@@ -85,7 +85,19 @@ section button:hover {
     background-color:  #FAFAFA;
 }
 
-
+.popover1, .popover2 {
+    display: none;
+    /*position: absolute;*/
+}
+.locations:hover, .amenities:hover  {
+    background-color:  #FAFAFA;
+}
+.locations:hover .popover1 {
+    display: block;
+}
+.amenities:hover .popover2 {
+    display: block;
+}
 
 
 
