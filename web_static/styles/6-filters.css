@@ -53,18 +53,17 @@ section button:hover {
     font-size: 14px;
     margin-top: 3px;
 }
-
-.amenities ul  {
-    padding: 40px;
-    list-style: none;
-    background-color:  #FAFAFA;
-}
 .locations h3, .amenities h3{
     text-align: left;
     padding-left: 45px;
     weight: 600;
     margin-bottom: 3px;
+}
 
+.amenities ul  {
+    padding: 40px;
+    list-style: none;
+    background-color:  #FAFAFA;
 }
 .locations li {
     list-style: none;
