@@ -62,11 +62,6 @@ section button:hover {
 .popover1 {
     border: 1px solid red;
     padding: 40px;
-    text-align: left;
-    list-style: none;
-    background-color:  #FAFAFA;
-    text-align: left;
-
 }
 .popover2  {
     text-align: left;
@@ -76,6 +71,10 @@ section button:hover {
 }
 
 .locations ul {
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    background-color:  #FAFAFA;
 }
 
 .popover1 h2, .popover2 h2 {
