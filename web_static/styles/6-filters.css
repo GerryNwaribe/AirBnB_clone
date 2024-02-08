@@ -58,7 +58,6 @@ section button:hover {
     padding: 40px;
     list-style: none;
     background-color:  #FAFAFA;
-    text-align: left;
 }
 .locations h3, .amenities h3{
     text-align: left;
