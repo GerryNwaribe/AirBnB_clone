@@ -60,19 +60,19 @@ section button:hover {
     margin-bottom: 3px;
 }
 .amenities ul  {
+    
     padding: 40px;
     list-style: none;
     background-color:  #FAFAFA;
 }
 
 .locations li {
-
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
 }
 
-.popover h2 {
+.popover1 h2, .popover2 h2 {
     font-size: 16px;
 }
 
