@@ -60,12 +60,14 @@ section button:hover {
     margin-bottom: 3px;
 }
 .amenities ul  {
+    text-align: left;
     padding: 40px;
     list-style: none;
     background-color:  #FAFAFA;
 }
 
-.locations li {
+.locations ul {
+    text-align: left;
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
