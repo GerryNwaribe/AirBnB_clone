@@ -59,17 +59,17 @@ section button:hover {
     weight: 600;
     margin-bottom: 3px;
 }
-
 .amenities ul  {
     padding: 40px;
     list-style: none;
     background-color:  #FAFAFA;
 }
+
 .locations li {
+
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
-    border: 1px solid red;
 }
 
 .popover h2 {
