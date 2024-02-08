@@ -46,16 +46,6 @@ section button:hover {
     cursor: pointer;
 }
 
-
-.locations h3, .amenities h3{
-    text-align: left;
-    padding-left: 45px;
-    weight: 600;
-    margin-bottom: 3px;
-
-}
-
-
 .locations h4, .amenities h4{
     padding-left: 45px;
     text-align: left;
@@ -69,6 +59,13 @@ section button:hover {
     list-style: none;
     background-color:  #FAFAFA;
     text-align: left;
+}
+.locations h3, .amenities h3{
+    text-align: left;
+    padding-left: 45px;
+    weight: 600;
+    margin-bottom: 3px;
+
 }
 .locations li {
     list-style: none;
