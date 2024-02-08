@@ -63,6 +63,7 @@ section button:hover {
     text-align: left;
     padding: 40px;
     list-style: none;
+    border: solid 1px #DDDDDD;
     background-color:  #FAFAFA;
 }
 .popover1 h2, .popover2 h2 {
@@ -74,6 +75,7 @@ section button:hover {
 
 }
 .popover1 {
+    border: solid 1px #DDDDDD;
     padding-top: 25px;
     padding-bottom: 35px;
 }
